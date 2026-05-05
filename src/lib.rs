@@ -104,6 +104,12 @@ mod schema {
                 client: ::std::sync::Arc<crate::client::Client>,
             }
 
+			impl $name {
+				pub fn rpc_id(&self) -> u64 {
+					self.id
+				}
+			}
+
             impl crate::schema::DecodeUntagged for $name {
                 fn decode_untagged(
                     client: ::std::sync::Arc<crate::client::Client>,
